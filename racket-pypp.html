@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="ro" dir="ltr" class="no-js">
+<head>
+    <meta charset="utf-8" />
+    <title>Racket: PyPP byterun [Paradigme de Programare]</title>
+    <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+    <meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="keywords" content="19,teme,racket-pypp"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/pp/lib/exe/opensearch.php" title="Paradigme de Programare"/>
+<link rel="start" href="/pp/"/>
+<link rel="manifest" href="/pp/lib/exe/manifest.php"/>
+<link rel="alternate" type="application/rss+xml" title="Modificări recente" href="/pp/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Current namespace" href="/pp/feed.php?mode=list&amp;ns=19:teme"/>
+<link rel="alternate" type="text/html" title="Plain HTML" href="/pp/_export/xhtml/19/teme/racket-pypp"/>
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="/pp/_export/raw/19/teme/racket-pypp"/>
+<link rel="canonical" href="https://elf.cs.pub.ro/pp/19/teme/racket-pypp"/>
+<link rel="stylesheet" type="text/css" href="/pp/lib/exe/css.php?t=dokuwiki&amp;tseed=1dcfa01dd36f3060e8d8dc4ffacd4a7d"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='19:teme';var JSINFO = {"isadmin":0,"isauth":0,"move_renameokay":false,"id":"19:teme:racket-pypp","namespace":"19:teme","ACT":"show","useHeadingNavigation":1,"useHeadingContent":1};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/pp/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="/pp/lib/exe/js.php?t=dokuwiki&amp;tseed=1dcfa01dd36f3060e8d8dc4ffacd4a7d"></script>
+<script type="text/x-mathjax-config">/*<![CDATA[*/MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+        displayMath: [ ["$$","$$"], ["\\[","\\]"] ],
+        processEscapes: true
+    }
+});
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+<!--<![endif]-->
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="shortcut icon" href="/pp/lib/tpl/dokuwiki/images/favicon.ico" />
+<link rel="apple-touch-icon" href="/pp/lib/tpl/dokuwiki/images/apple-touch-icon.png" />
+    </head>
+
+<body>
+    <div id="dokuwiki__site"><div id="dokuwiki__top" class="site dokuwiki mode_show tpl_dokuwiki    showSidebar hasSidebar">
+
+        
+<!-- ********** HEADER ********** -->
+<div id="dokuwiki__header"><div class="pad group">
+
+    
+    <div class="headings group">
+        <ul class="a11y skip">
+            <li><a href="#dokuwiki__content">mergi la conținut</a></li>
+        </ul>
+
+        <h1><a href="/pp/home"  accesskey="h" title="[H]"><img src="/pp/_media/wiki/logo.png" width="64" height="27" alt="" /> <span>Paradigme de Programare</span></a></h1>
+            </div>
+
+    <div class="tools group">
+        <!-- USER TOOLS -->
+                    <div id="dokuwiki__usertools">
+                <h3 class="a11y">Unelte utilizator</h3>
+                <ul>
+                    <li class="action login"><a href="/pp/19/teme/racket-pypp?do=login&amp;sectok=" title="Autentificare" rel="nofollow"><span>Autentificare</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 17.25V14H3v-4h7V6.75L15.25 12 10 17.25M8 2h9a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-4h2v4h9V4H8v4H6V4a2 2 0 0 1 2-2z"/></svg></a></li>                </ul>
+            </div>
+        
+        <!-- SITE TOOLS -->
+        <div id="dokuwiki__sitetools">
+            <h3 class="a11y">Unelte site</h3>
+            <form action="/pp/home" method="get" role="search" class="search doku_form" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search" /><input type="hidden" name="id" value="19:teme:racket-pypp" /><div class="no"><input name="q" type="text" class="edit" title="[F]" accesskey="f" placeholder="Caută" autocomplete="on" id="qsearch__in" value="" /><button value="1" type="submit" title="Caută">Caută</button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>            <div class="mobileTools">
+                <form action="/pp/doku.php" method="get" accept-charset="utf-8"><div class="no"><input type="hidden" name="id" value="19:teme:racket-pypp" /><select name="do" class="edit quickselect" title="Unelte"><option value="">Unelte</option><optgroup label="Unelte pagină"><option value="edit">Arată sursa paginii</option><option value="revisions">Versiuni anterioare</option><option value="backlink">Legătură anterioară</option></optgroup><optgroup label="Unelte site"><option value="recent">Modificări recente</option><option value="media">Administrare media</option></optgroup><optgroup label="Unelte utilizator"><option value="login">Autentificare</option></optgroup></select><button type="submit">&gt;</button></div></form>            </div>
+            <ul>
+                <li class="action recent"><a href="/pp/19/teme/racket-pypp?do=recent" title="Modificări recente [r]" rel="nofollow" accesskey="r">Modificări recente</a></li><li class="action media"><a href="/pp/19/teme/racket-pypp?do=media&amp;ns=19%3Ateme" title="Administrare media" rel="nofollow">Administrare media</a></li>            </ul>
+        </div>
+
+    </div>
+
+    <!-- BREADCRUMBS -->
+            <div class="breadcrumbs">
+                            <div class="youarehere"><span class="bchead">Ești aici: </span><span class="home"><bdi><a href="/pp/home" class="wikilink1" title="home">Paradigme de Programare CA|CC|CD</a></bdi></span> » <bdi><a href="/pp/19/home" class="wikilink1" title="19:home">2019</a></bdi> » <bdi><a href="/pp/19/teme/home" class="wikilink2" title="19:teme:home" rel="nofollow">teme</a></bdi> » <bdi><span class="curid"><a href="/pp/19/teme/racket-pypp" class="wikilink1" title="19:teme:racket-pypp">Racket: PyPP byterun</a></span></bdi></div>
+                                </div>
+    
+
+
+    <hr class="a11y" />
+</div></div><!-- /header -->
+
+        <div class="wrapper group">
+
+                            <!-- ********** ASIDE ********** -->
+                <div id="dokuwiki__aside"><div class="pad aside include group">
+                    <h3 class="toggle">Sidebar</h3>
+                    <div class="content"><div class="group">
+                                                                        
+<p>
+<strong>General</strong>
+</p>
+<ul>
+<li class="level1"><div class="li"> <span class="curid"><a href="/pp/home" class="wikilink1" title="home">Home</a></span></div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <a href="/pp/19/regulament" class="wikilink1" title="19:regulament">Regulament</a></div>
+</li>
+<li class="level0"><div class="li"> <a href="/pp/19/limbaje" class="wikilink1" title="19:limbaje">Limbaje</a> </div>
+</li>
+<li class="level0"><div class="li"> <a href="/pp/examene" class="wikilink1" title="examene">Examene și teste</a></div>
+</li>
+<li class="level0"><div class="li"> <a href="/pp/bibliografie" class="wikilink1" title="bibliografie">Bibliografie</a></div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <a href="https://acs.curs.pub.ro/2018/mod/url/view.php?id=11195" class="urlextern" title="https://acs.curs.pub.ro/2018/mod/url/view.php?id=11195" rel="nofollow">Punctaje </a></div>
+</li>
+</ul>
+
+<p>
+<strong>Cursuri</strong>
+</p>
+<ul>
+<li class="level1 node"><div class="li"> CA</div>
+<ul>
+<li class="level2"><div class="li"> <a href="/pp/19/cursuri/mihnea" class="wikilink1" title="19:cursuri:mihnea">Tematică</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="/pp/_media/19/cursuri/mihnea/slides.pdf" class="media mediafile mf_pdf" title="19:cursuri:mihnea:slides.pdf (2.4 MB)">Slides</a> (v1)</div>
+</li>
+<li class="level2"><div class="li"> <a href="/pp/_media/19/cursuri/mihnea/cod.zip" class="media mediafile mf_zip" title="19:cursuri:mihnea:cod.zip (55.9 KB)">Cod</a> (v1)</div>
+</li>
+<li class="level2"><div class="li"> <a href="https://docs.google.com/forms/d/e/1FAIpQLSeP7GeWhxDrr_ziV0k55NtgKc0-WpocASjZ73Ls7VzFS5BRbg/viewform" class="urlextern" title="https://docs.google.com/forms/d/e/1FAIpQLSeP7GeWhxDrr_ziV0k55NtgKc0-WpocASjZ73Ls7VzFS5BRbg/viewform" rel="nofollow">Feedback curs</a></div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> CC</div>
+<ul>
+<li class="level2"><div class="li"> <a href="/pp/19/cursuri/andrei" class="wikilink1" title="19:cursuri:andrei">Slides CC</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="https://docs.google.com/forms/d/e/1FAIpQLSfYyqir8y7UKgISgREDWrRu0gIsTCJwfMa_CFBBUEMihVx57A/viewform" class="urlextern" title="https://docs.google.com/forms/d/e/1FAIpQLSfYyqir8y7UKgISgREDWrRu0gIsTCJwfMa_CFBBUEMihVx57A/viewform" rel="nofollow">Feedback curs CC</a></div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> CD</div>
+<ul>
+<li class="level2"><div class="li"> <a href="/pp/19/cursuri/mihaela" class="wikilink1" title="19:cursuri:mihaela">Cursuri CD</a></div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+<strong>Laboratoare</strong>
+</p>
+<ol>
+<li class="level1"><div class="li"> <a href="/pp/19/laboratoare/racket/intro" class="wikilink1" title="19:laboratoare:racket:intro">Racket: Introducere</a></div>
+</li>
+<li class="level0"><div class="li"> <a href="/pp/19/laboratoare/racket/recursivitate" class="wikilink1" title="19:laboratoare:racket:recursivitate">Racket: Recursivitate</a></div>
+</li>
+<li class="level0"><div class="li"> <a href="/pp/19/laboratoare/racket/functionale" class="wikilink1" title="19:laboratoare:racket:functionale">Racket: Funcții ca valori. Funcționale</a></div>
+</li>
+<li class="level0"><div class="li"> <a href="/pp/19/laboratoare/racket/legare" class="wikilink1" title="19:laboratoare:racket:legare">Racket: Legarea variabilelor. Închideri funcționale</a></div>
+</li>
+<li class="level0"><div class="li"> <a href="/pp/19/laboratoare/racket/intarziere" class="wikilink1" title="19:laboratoare:racket:intarziere">Racket: Întârzierea evaluării</a></div>
+</li>
+<li class="level0"><div class="li"> <a href="/pp/19/laboratoare/haskell/intro" class="wikilink1" title="19:laboratoare:haskell:intro">Haskell: Introducere</a></div>
+</li>
+</ol>
+
+
+
+<p>
+<strong>Teme</strong>
+</p>
+<ol>
+<li class="level1"><div class="li"> <a href="/pp/19/teme/racket-pypp" class="wikilink1" title="19:teme:racket-pypp">Racket: PyPP byterun</a></div>
+</li>
+</ol>
+                                            </div></div>
+                </div></div><!-- /aside -->
+            
+            <!-- ********** CONTENT ********** -->
+            <div id="dokuwiki__content"><div class="pad group">
+                
+                <div class="pageId"><span>19:teme:racket-pypp</span></div>
+
+                <div class="page group">
+                                                            <!-- wikipage start -->
+                    <!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle">Cuprins</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#racketpypp-byterun">Racket: PyPP byterun</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#descriere">Descriere</a></div></li>
+<li class="level2"><div class="li"><a href="#introducere">Introducere</a></div></li>
+<li class="level2"><div class="li"><a href="#cpython">CPython</a></div></li>
+<li class="level2"><div class="li"><a href="#cpython-bytecode">CPython ByteCode</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#exemple">Exemple</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#exemplu-1">Exemplu #1</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#indecsi-in-co-varnames">Indecși în co-varnames</a></div></li>
+<li class="level3"><div class="li"><a href="#load_const-si-store_fast">LOAD_CONST și STORE_FAST</a></div></li>
+<li class="level3"><div class="li"><a href="#load_fast">LOAD_FAST</a></div></li>
+<li class="level3"><div class="li"><a href="#binary_add">BINARY_ADD</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#exemplu-2">Exemplu #2</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#compare_op">COMPARE_OP</a></div></li>
+<li class="level3"><div class="li"><a href="#pop_jump_if_falsepop_jump_if_true">POP_JUMP_IF_FALSE / POP_JUMP_IF_TRUE</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#exemplu-3">Exemplu #3</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#jump_absolute">JUMP_ABSOLUTE</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#exemplu-4">Exemplu #4</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#get_iterfor_iter">GET_ITER / FOR_ITER</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#exemplu-5-pentru-bonus">Exemplu #5 (pentru bonus)</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#load_global">LOAD_GLOBAL</a></div></li>
+<li class="level3"><div class="li"><a href="#call_function">CALL_FUNCTION</a></div></li>
+<li class="level3"><div class="li"><a href="#pop_top">POP_TOP</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#detalii-de-implementare-in-racket">Detalii de implementare în Racket</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#dictionare">Dicționare</a></div></li>
+<li class="level3"><div class="li"><a href="#iteratori">Iteratori</a></div></li>
+<li class="level3"><div class="li"><a href="#jump-la-target">Jump la target</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#punctaje">Punctaje</a></div></li>
+<li class="level2"><div class="li"><a href="#generare-cod">Generare cod</a></div></li>
+<li class="level2"><div class="li"><a href="#rulare">Rulare</a></div></li>
+<li class="level2"><div class="li"><a href="#precizari">Precizări</a></div></li>
+<li class="level2"><div class="li"><a href="#arhive-de-pornire">Arhive de pornire</a></div></li>
+<li class="level2"><div class="li"><a href="#changelog">Changelog</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<h1 class="sectionedit1" id="racketpypp-byterun">Racket: PyPP byterun</h1>
+<div class="level1">
+<ul>
+<li class="level1"><div class="li"> Responsabili: <a href="mailto:&#x74;&#x65;&#x6f;&#x64;&#x6f;&#x72;&#x39;&#x38;&#x73;&#x7a;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;" class="mail" title="&#x74;&#x65;&#x6f;&#x64;&#x6f;&#x72;&#x39;&#x38;&#x73;&#x7a;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;">Teodor Szente</a>, <a href="mailto:&#x6d;&#x75;&#x72;&#x61;&#x72;&#x75;&#x67;&#x65;&#x6f;&#x72;&#x67;&#x65;&#x63;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;" class="mail" title="&#x6d;&#x75;&#x72;&#x61;&#x72;&#x75;&#x67;&#x65;&#x6f;&#x72;&#x67;&#x65;&#x63;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;"> George Muraru</a>, <a href="mailto:&#x6d;&#x69;&#x68;&#x61;&#x69;&#x2e;&#x6e;&#x61;&#x6e;&#x2e;&#x63;&#x74;&#x69;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;" class="mail" title="&#x6d;&#x69;&#x68;&#x61;&#x69;&#x2e;&#x6e;&#x61;&#x6e;&#x2e;&#x63;&#x74;&#x69;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;">Mihai Nan</a></div>
+</li>
+<li class="level0"><div class="li"> Deadline soft: <strong>01.04.2019</strong>, apoi depunctare 0.5p/zi </div>
+</li>
+<li class="level0"><div class="li"> Deadline hard: <em class="u">08.04.2019 ora 23.59</em></div>
+</li>
+<li class="level0"><div class="li"> Data publicării: 16.03.2019</div>
+</li>
+<li class="level0"><div class="li"> Data ultimei modificări: 21.03.2018 <a href="#changelog" title="19:teme:racket-pypp ↵" class="wikilink1">changelog</a></div>
+</li>
+<li class="level0"><div class="li"> Tema se va încărca pe <strong>vmchecker</strong></div>
+</li>
+<li class="level0"><div class="li"> <a href="https://acs.curs.pub.ro/2018/mod/forum/view.php?id=11698" class="urlextern" title="https://acs.curs.pub.ro/2018/mod/forum/view.php?id=11698" rel="nofollow">Forum tema 1</a></div>
+</li>
+<li class="level0"><div class="li"> <a href="https://vmchecker.cs.pub.ro/ui/#PP" class="urlextern" title="https://vmchecker.cs.pub.ro/ui/#PP" rel="nofollow">vmchecker</a></div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit2" id="descriere">Descriere</h2>
+<div class="level2">
+
+<p>
+Tema are ca scop implementarea unui <strong>interpretor minimalist</strong> pentru limbajul python, folosind paradigma funcțională.
+</p>
+
+</div>
+
+<h2 class="sectionedit3" id="introducere">Introducere</h2>
+<div class="level2">
+
+<p>
+Nu vă panicați dacă pentru voi limbajul python este străin, l-am ales pentru popularitatea de care se bucură și multitudinea de resurse online disponibile. Tema ar putea funcționa la fel pentru orice alt limbaj.
+</p>
+
+<p>
+Din punctul de vedere al modului de execuție, un limbaj poate fi:
+</p>
+<ul>
+<li class="level1"><div class="li"> compilat = codul sursă este transformat în cod mașină, dependent de arhitectură </div>
+</li>
+<li class="level0"><div class="li"> interpretat = codul sursă este executat direct de către un intepretor </div>
+</li>
+</ul>
+
+<p>
+Unele interpretoare își creează intern propriul cod binar. Acesta <strong>nu este cod mașină</strong> și nu poate fi rulat pe mașina fizică (direct de către CPU), dar este rulat mai departe pe o mașină virtuală. Această metodă a fost popularizată de către Java și prezintă două avantaje:
+</p>
+<ul>
+<li class="level1"><div class="li"> Separă conceptele de parsare și execuție, astfel codul sursă fiind mai ușor de înțeles.</div>
+</li>
+<li class="level0"><div class="li"> În multe cazuri, utilizatorul final nu va modifica niciodată codul, deci se poate instala doar partea care execută codul.</div>
+</li>
+</ul>
+
+<p>
+Este normal ca aceste lucruri să creeze confuzie, după cum puteți observa. Deși în teorie conceptele de interpretare/compilare sunt ușor de separat, în industrie programatorii aleg să facă proiecte care le rezolvă nevoile, mai degrabă decât sa facă proiecte care respectă în tocmai guideline-uri. Astfel, au apărut tot felul de interpretoare pentru tot felul de limbaje.
+</p>
+
+<p>
+Pentru Python avem: <a href="https://en.wikipedia.org/wiki/CPython" class="urlextern" title="https://en.wikipedia.org/wiki/CPython" rel="nofollow">CPython</a>, <a href="https://en.wikipedia.org/wiki/PyPy" class="urlextern" title="https://en.wikipedia.org/wiki/PyPy" rel="nofollow">PyPy</a>, <a href="https://en.wikipedia.org/wiki/MicroPython" class="urlextern" title="https://en.wikipedia.org/wiki/MicroPython" rel="nofollow">MicroPython</a>, <a href="https://en.wikipedia.org/wiki/Jython" class="urlextern" title="https://en.wikipedia.org/wiki/Jython" rel="nofollow">Jython</a>, etc. Toate au fost create din nevoi diferite și nu respectă cu strictețe un standard când vine vorba de modul în care codul rulează.
+</p>
+
+<p>
+În acestă temă vom aprofunda <strong>CPython</strong>, prima implementare de Python și cea mai folosită, care creează ceea ce se numește <strong>python byte code</strong> și mai apoi este executat de ceea ce se numește <strong>byterun</strong>.
+</p>
+
+<p>
+Din tot interpretorul dorim să implementăm doar un <strong>byterun minimalist</strong> în Racket.
+</p>
+
+</div>
+
+<h2 class="sectionedit4" id="cpython">CPython</h2>
+<div class="level2">
+
+<p>
+CPython folosește un model numit <strong>stack machine model</strong>: pentru a opera instrucțiuni se folosește de o stivă. Pe lângă această stivă, interpretorul are nevoie să țină mai multe dicționare pentru a putea încărca valori imediate. Vom simplifica și vom folosi doar:
+</p>
+<ul>
+<li class="level1"><div class="li"> co_varnames = asocierea dintre numele variabilelor și valorile acestora din program care se schimbă la un moment dat în timp  </div>
+</li>
+<li class="level0"><div class="li"> co_constants = dicționar cu valorile constante</div>
+</li>
+<li class="level0"><div class="li"> co_names = dicționar cu nume de funcții (pentru bonus)</div>
+</li>
+</ul>
+
+<p>
+Pentru bucle, CPython for se folosește de iteratori. Un iterator este un obiect pentru care poate fi apelată o funcție de next care să întoarcă valoarea la pasul curent și valoarea următorului iterator. Vezi exemplu <a href="#iteratori" title="19:teme:racket-pypp ↵" class="wikilink1"> iterator in racket</a>.
+</p>
+
+</div>
+
+<h2 class="sectionedit5" id="cpython-bytecode">CPython ByteCode</h2>
+<div class="level2">
+
+<p>
+TOS = capătul stivei (top of stack).
+</p>
+
+<p>
+TOS1 = elementul dinainte de capătul stivei (de pe poziția top of stack - 1).
+</p>
+
+<p>
+Subsetul de instrucțiuni pe care le vom întâlni este:
+</p>
+<div class="table sectionedit6"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0 leftalign"> Opcode      </th><th class="col1 leftalign"> Definiţie      </th><th class="col2 rightalign">  Descriere </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0 centeralign">   1    </td><td class="col1 leftalign"> POP_TOP                </td><td class="col2 leftalign"> Apelează operația de pop pe stiva de execuție.                    </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign"> 100    </td><td class="col1 leftalign"> LOAD_CONST(const_i)    </td><td class="col2 leftalign"> Face push elementului de la <code>co_consts[const_i]</code> pe stiva de execuție.      </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign"> 116    </td><td class="col1 leftalign"> LOAD_GLOBAL(func_i)    </td><td class="col2 leftalign"> Face push elementului de la <code>co_names[func_i]</code> pe stiva de execuție.        </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 leftalign"> 125    </td><td class="col1 leftalign"> STORE_FAST(var_i)      </td><td class="col2"> Stocheaza TOS în <code>co_varnames[var_i]</code> și face pop de pe stivă. </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 leftalign"> 124    </td><td class="col1 leftalign"> LOAD_FAST(var_i)       </td><td class="col2"> Face push elementului de la <code>co_varnames[var_num]</code>pe stiva de execuție </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0 leftalign"> 22     </td><td class="col1 leftalign"> BINARY_MODULO          </td><td class="col2 leftalign"> Operează <code>TOS = TOS1 % TOS</code>                                    </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0 leftalign"> 23     </td><td class="col1 leftalign"> BINARY_ADD             </td><td class="col2 leftalign"> Operează <code>TOS = TOS1 + TOS</code>                                    </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0 leftalign"> 24     </td><td class="col1 leftalign"> BINARY_SUBTRACT        </td><td class="col2 leftalign"> Operează <code>TOS = TOS1 - TOS</code>                                    </td>
+	</tr>
+	<tr class="row9">
+		<td class="col0 leftalign"> 55     </td><td class="col1 leftalign"> INPLACE_ADD            </td><td class="col2 leftalign"> Aceeași operație ca BINARY_ADD (eg operație în Python: x += 3)   </td>
+	</tr>
+	<tr class="row10">
+		<td class="col0 leftalign"> 56     </td><td class="col1 leftalign"> INPLACE_SUBTRACT       </td><td class="col2 leftalign"> Aceeași operație ca BINARY_SUBTRACT                              </td>
+	</tr>
+	<tr class="row11">
+		<td class="col0 leftalign"> 59     </td><td class="col1 leftalign"> INPLACE_MODULO         </td><td class="col2 leftalign"> Aceeași operație ca BINARY_MODULO                                </td>
+	</tr>
+	<tr class="row12">
+		<td class="col0 leftalign"> 113    </td><td class="col1 leftalign"> JUMP_ABSOLUTE(target)  </td><td class="col2 leftalign"> Sare la instrucțiunea de pe bytecode-ul target                   </td>
+	</tr>
+	<tr class="row13">
+		<td class="col0 leftalign"> 107    </td><td class="col1 leftalign"> COMPARE_OP(i)          </td><td class="col2"> Face o operatie booleană între TOS și TOS1. Operația se afla la <code>cmp_op[i]</code>. Operanzii sunt scoși de pe stivă, iar rezultatul operației va fi pus pe stivă. </td>
+	</tr>
+	<tr class="row14">
+		<td class="col0 leftalign"> 114    </td><td class="col1"> POP_JUMP_IF_FALSE(target)</td><td class="col2"> Dacă TOS e fals, sare la target, dacă nu, se va continua cu următoarea instrucțiune - se face pop la element</td>
+	</tr>
+	<tr class="row15">
+		<td class="col0 leftalign"> 115    </td><td class="col1"> POP_JUMP_IF_TRUE(target)</td><td class="col2"> Dacă TOS e true, sare la target, dacă  nu, se va continua cu următoarea instrucțiune - se face pop la element</td>
+	</tr>
+	<tr class="row16">
+		<td class="col0 leftalign"> 68     </td><td class="col1 leftalign"> GET_ITER   </td><td class="col2"> Implementează TOS = iter(TOS) </td>
+	</tr>
+	<tr class="row17">
+		<td class="col0 leftalign"> 93     </td><td class="col1 leftalign"> FOR_ITER(delta)   </td><td class="col2"> Este garantat că TOS este iterator. Va face next(TOS). Dacă se întoarce o valoare, va pune valoarea pe stivă şi dedesubt noul iterator. Dacă iteratorul e gol, îl va scoate de pe stivă și va sari cu delta + 2 bytes </td>
+	</tr>
+	<tr class="row18">
+		<td class="col0 leftalign"> 131    </td><td class="col1 leftalign"> CALL_FUNCTION(argc)    </td><td class="col2"> Apelează o funcție. Pe stivă se află un număr de <code>argc</code> argumente, urmat de numele funcției. CALL_FUNCTION le va scoate de pe stivă, va apela funcția (definită în Racket) și va pune rezultatul pe stivă. </td>
+	</tr>
+	<tr class="row19">
+		<td class="col0 leftalign"> 120    </td><td class="col1"> SETUP_LOOP(delta)</td><td class="col2"> <strong>O puteți ignora pentru această temă</strong> Pushează un bloc pentru o buclă pe stiva de blocuri. Blocul începe de la instrucțiunea curentă și are lungimea delta</td>
+	</tr>
+	<tr class="row20">
+		<td class="col0 leftalign"> 87     </td><td class="col1 leftalign"> POP_BLOCK  </td><td class="col2"> <strong>O puteți ignora pentru această temă</strong> Apelează operația de pop pe stiva de execuție </td>
+	</tr>
+	<tr class="row21">
+		<td class="col0 leftalign"> 83     </td><td class="col1"> RETURN_VALUE </td><td class="col2"> S-a terminat execuția funcției - nu ar trebui făcut nimic</td>
+	</tr>
+</table></div>
+
+</div>
+
+<h1 class="sectionedit7" id="exemple">Exemple</h1>
+<div class="level1">
+
+</div>
+
+<h2 class="sectionedit8" id="exemplu-1">Exemplu #1</h2>
+<div class="level2">
+
+<p>
+Pentru a înțelege mai bine bytecode-ul, vom urmări următorul exemplu:
+</p>
+<dl class="file">
+<dt><a href="/pp/_export/code/19/teme/racket-pypp?codeblock=0" title="Bloc descărcări" class="mediafile mf_py">add.py</a></dt>
+<dd><pre class="code file python"><span class="kw1">def</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>:
+    a <span class="sy0">=</span> <span class="nu0">2</span>
+    b <span class="sy0">=</span> <span class="nu0">3</span>
+    c <span class="sy0">=</span> a + b</pre>
+</dd></dl>
+
+<p>
+În Python nu este nevoie să definim o funcție <code>main</code> ca în C, dar vom face asta pentru simplitate. Pachetul <code>dis</code> poate dezasambla o funcție: 
+</p>
+<pre class="code python">$ python3
+Python 3.6.7 <span class="br0">&#40;</span>default<span class="sy0">,</span> Oct <span class="nu0">15</span> <span class="nu0">2018</span><span class="sy0">,</span> <span class="nu0">11</span>:<span class="nu0">32</span>:<span class="nu0">17</span><span class="br0">&#41;</span> 
+<span class="br0">&#91;</span>GCC 8.2.0<span class="br0">&#93;</span> on linux
+Type <span class="st0">&quot;help&quot;</span><span class="sy0">,</span> <span class="st0">&quot;copyright&quot;</span><span class="sy0">,</span> <span class="st0">&quot;credits&quot;</span> <span class="kw1">or</span> <span class="st0">&quot;license&quot;</span> <span class="kw1">for</span> more information.
+<span class="sy0">&gt;&gt;&gt;</span> <span class="kw1">import</span> <span class="kw3">dis</span>
+<span class="sy0">&gt;&gt;&gt;</span> <span class="kw1">import</span> add <span class="co1"># (fișierul unde s-a creat funcția main se numește add.py</span>
+<span class="sy0">&gt;&gt;&gt;</span> <span class="kw3">dis</span>.<span class="kw3">dis</span><span class="br0">&#40;</span>add.<span class="me1">main</span><span class="br0">&#41;</span>
+  <span class="nu0">2</span>           <span class="nu0">0</span> LOAD_CONST               <span class="nu0">1</span> <span class="br0">&#40;</span><span class="nu0">2</span><span class="br0">&#41;</span>
+              <span class="nu0">3</span> STORE_FAST               <span class="nu0">0</span> <span class="br0">&#40;</span>a<span class="br0">&#41;</span>
+&nbsp;
+  <span class="nu0">3</span>           <span class="nu0">6</span> LOAD_CONST               <span class="nu0">2</span> <span class="br0">&#40;</span><span class="nu0">3</span><span class="br0">&#41;</span>
+              <span class="nu0">9</span> STORE_FAST               <span class="nu0">1</span> <span class="br0">&#40;</span>b<span class="br0">&#41;</span>
+&nbsp;
+  <span class="nu0">4</span>          <span class="nu0">12</span> LOAD_FAST                <span class="nu0">0</span> <span class="br0">&#40;</span>a<span class="br0">&#41;</span>
+             <span class="nu0">15</span> LOAD_FAST                <span class="nu0">1</span> <span class="br0">&#40;</span>b<span class="br0">&#41;</span>
+             <span class="nu0">18</span> BINARY_ADD          
+             <span class="nu0">19</span> STORE_FAST               <span class="nu0">2</span> <span class="br0">&#40;</span>c<span class="br0">&#41;</span>
+             <span class="nu0">22</span> LOAD_CONST               <span class="nu0">0</span> <span class="br0">&#40;</span><span class="kw2">None</span><span class="br0">&#41;</span>
+             <span class="nu0">25</span> RETURN_VALUE        </pre>
+
+</div>
+
+<h3 class="sectionedit9" id="indecsi-in-co-varnames">Indecși în co-varnames</h3>
+<div class="level3">
+
+<p>
+Să luam ca exemplu primele 4 instrucțiuni: 
+</p>
+<pre class="code">LOAD_CONST 1
+STORE_FAST 0 ( a este înlocuit cu 0 )
+LOAD_CONST 2 
+STORE_FAST 1 ( b este înlocuit cu 1 )</pre>
+
+<p>
+La început este co-varnames = <code>{a=None, b=None, c=None}</code> și co-consts <code>{ 0=None, 1=2, 2=3}</code>
+Atenție: <code>None</code> este echivalentul pentru null in Python și va fi mereu găsit pe <code>co-consts[0]</code>.
+</p>
+
+<p>
+Observați că, atunci când generează codul, Python înlocuiește numele variabilelor cu numere, în cazul nostru, ‘’a’’ este înlocuit cu <code>0</code>, <code>b</code> cu <code>1</code> și <code>c</code> cu <code>2</code>. Face această optimizare pentru a putea folosi vectori (buffere), în loc de dicționare. 
+</p>
+
+<p>
+Implementarea voastră nu se va schimba (noi vom folosi dicționare). Scheletul de cod ia în calcul acest lucru, trebuie doar să țineți minte că, atunci când vedeți 0, 1, etc… în byte-code, este vorba despre prima variabilă, a doua variabilă, etc.
+</p>
+
+</div>
+
+<h3 class="sectionedit10" id="load_const-si-store_fast">LOAD_CONST și STORE_FAST</h3>
+<div class="level3">
+
+<p>
+<code>LOAD_CONST 1</code> va pune valoarea de la <code>co_consts[1]</code> pe stivă:
+</p>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<td class="col0">2</td><td class="col1"> </td><td class="col2"> </td><td class="col3"> </td>
+	</tr>
+</table></div>
+
+<p>
+<code>STORE_FAST 0</code> va pune în <code>co-varnames[0]</code> 2 (valoarea de pe stivă) și va face pop la element.
+</p>
+
+<p>
+<code>LOAD_CONST 2</code> va pune valoarea de la <code>co_consts[2]</code> pe stivă:
+</p>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<td class="col0">3</td><td class="col1"> </td><td class="col2"> </td><td class="col3"> </td>
+	</tr>
+</table></div>
+
+<p>
+
+<code>STORE_FAST 1</code> va pune în <code>co-varnames[1]</code> 3 (valoarea de pe stivă) și va face pop la element.
+</p>
+
+<p>
+Astfel, la finalul primei secvențe: co-varnames = <code>{0=2, 1=3, 2=None}</code>, adică <code>{a=2, b=3, c=None}</code>.
+</p>
+
+</div>
+
+<h3 class="sectionedit11" id="load_fast">LOAD_FAST</h3>
+<div class="level3">
+<pre class="code">LOAD_FAST                0
+LOAD_FAST                1</pre>
+
+<p>
+LOAD_FAST pune valoarea de la <code>co-varnames[i]</code> în capătul stivei: <code>LOAD_FAST 0</code> va pune pe stivă <code>co-varnames[0]</code>:
+</p>
+<div class="table sectionedit12"><table class="inline">
+	<tr class="row0">
+		<td class="col0">2</td><td class="col1">3</td><td class="col2">2</td><td class="col3"> </td>
+	</tr>
+</table></div>
+
+<p>
+<code>LOAD_FAST 1</code> va pune pe stivă <code>co-varnames[1]</code>:
+</p>
+<div class="table sectionedit13"><table class="inline">
+	<tr class="row0">
+		<td class="col0">3</td><td class="col1">2</td><td class="col2">3</td><td class="col3">2</td><td class="col4"> </td>
+	</tr>
+</table></div>
+
+</div>
+
+<h3 class="sectionedit14" id="binary_add">BINARY_ADD</h3>
+<div class="level3">
+<pre class="code">BINARY_ADD 0</pre>
+
+<p>
+Stiva utilizată pentru BINARY_ADD este cea de sus.
+</p>
+
+<p>
+BINARY_ADD va face TOS = TOS1 + TOS (TOS si TOS1 vor fi eliminați de pe stivă și se va face push la rezultatul operației). Stiva va deveni:
+</p>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<td class="col0">5</td><td class="col1">3</td><td class="col2">2</td>
+	</tr>
+</table></div>
+
+
+
+</div>
+
+<h2 class="sectionedit15" id="exemplu-2">Exemplu #2</h2>
+<div class="level2">
+<pre class="code python">$ python3
+Python 3.6.7 <span class="br0">&#40;</span>default<span class="sy0">,</span> Oct <span class="nu0">22</span> <span class="nu0">2018</span><span class="sy0">,</span> <span class="nu0">11</span>:<span class="nu0">32</span>:<span class="nu0">17</span><span class="br0">&#41;</span> 
+<span class="br0">&#91;</span>GCC 8.2.0<span class="br0">&#93;</span> on linux
+Type <span class="st0">&quot;help&quot;</span><span class="sy0">,</span> <span class="st0">&quot;copyright&quot;</span><span class="sy0">,</span> <span class="st0">&quot;credits&quot;</span> <span class="kw1">or</span> <span class="st0">&quot;license&quot;</span> <span class="kw1">for</span> more information.
+<span class="sy0">&gt;&gt;&gt;</span> <span class="kw1">def</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>:
+...     <span class="me1">a</span> <span class="sy0">=</span> <span class="nu0">2</span>
+...     <span class="kw1">if</span> a <span class="sy0">&lt;</span> <span class="nu0">2</span>:
+...             <span class="me1">a</span> <span class="sy0">=</span> <span class="nu0">3</span>
+... 
+<span class="sy0">&gt;&gt;&gt;</span> <span class="kw1">import</span> <span class="kw3">dis</span>
+<span class="sy0">&gt;&gt;&gt;</span> <span class="kw3">dis</span>.<span class="kw3">dis</span><span class="br0">&#40;</span>main<span class="br0">&#41;</span>
+  <span class="nu0">2</span>           <span class="nu0">0</span> LOAD_CONST               <span class="nu0">1</span> <span class="br0">&#40;</span><span class="nu0">2</span><span class="br0">&#41;</span>
+              <span class="nu0">2</span> STORE_FAST               <span class="nu0">0</span> <span class="br0">&#40;</span>a<span class="br0">&#41;</span>
+&nbsp;
+  <span class="nu0">3</span>           <span class="nu0">4</span> LOAD_FAST                <span class="nu0">0</span> <span class="br0">&#40;</span>a<span class="br0">&#41;</span>
+              <span class="nu0">6</span> LOAD_CONST               <span class="nu0">1</span> <span class="br0">&#40;</span><span class="nu0">2</span><span class="br0">&#41;</span>
+              <span class="nu0">8</span> COMPARE_OP               <span class="nu0">0</span> <span class="br0">&#40;</span><span class="sy0">&lt;</span><span class="br0">&#41;</span>
+             <span class="nu0">10</span> POP_JUMP_IF_FALSE       <span class="nu0">16</span>
+&nbsp;
+  <span class="nu0">4</span>          <span class="nu0">12</span> LOAD_CONST               <span class="nu0">2</span> <span class="br0">&#40;</span><span class="nu0">3</span><span class="br0">&#41;</span>
+             <span class="nu0">14</span> STORE_FAST               <span class="nu0">0</span> <span class="br0">&#40;</span>a<span class="br0">&#41;</span>
+        <span class="sy0">&gt;&gt;</span>   <span class="nu0">16</span> LOAD_CONST               <span class="nu0">0</span> <span class="br0">&#40;</span><span class="kw2">None</span><span class="br0">&#41;</span>
+             <span class="nu0">18</span> RETURN_VALUE
+&nbsp;</pre>
+
+</div>
+
+<h3 class="sectionedit16" id="compare_op">COMPARE_OP</h3>
+<div class="level3">
+<pre class="code">COMPARE_OP  0 (0 este numărul operației)</pre>
+
+<p>
+<code>COMPARE_OP</code> face o operație booleană cu între TOS şi TOS1, apoi pune rezultatul pe stivă.
+</p>
+
+<p>
+Operațiile posibile sunt: 
+</p>
+<pre class="code python"><span class="sy0">&gt;&gt;&gt;</span> <span class="kw3">dis</span>.<span class="me1">cmp_op</span>
+<span class="br0">&#40;</span><span class="st0">'&lt;'</span><span class="sy0">,</span> <span class="st0">'&lt;='</span><span class="sy0">,</span> <span class="st0">'=='</span><span class="sy0">,</span> <span class="st0">'!='</span><span class="sy0">,</span> <span class="st0">'&gt;'</span><span class="sy0">,</span> <span class="st0">'&gt;='</span><span class="sy0">,</span> <span class="st0">'in'</span><span class="sy0">,</span> <span class="st0">'not in'</span><span class="sy0">,</span> <span class="st0">'is'</span><span class="sy0">,</span> <span class="st0">'is not'</span><span class="sy0">,</span> <span class="st0">'exception match'</span><span class="sy0">,</span> <span class="st0">'BAD'</span><span class="br0">&#41;</span> </pre>
+
+<p>
+Le puteți ignora pe ultimele 4.
+</p>
+
+<p>
+După load-uri, stiva devine:
+</p>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<td class="col0">2</td><td class="col1">2</td><td class="col2"> </td><td class="col3"> </td>
+	</tr>
+</table></div>
+
+<p>
+
+<code>COMPARE_OP  0</code> va evalua <code>2 &lt; 2</code> (fals) și va pune rezultatul pe stivă:
+</p>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<td class="col0">False</td><td class="col1"></td><td class="col2"></td><td class="col3"></td>
+	</tr>
+</table></div>
+
+
+
+</div>
+
+<h3 class="sectionedit17" id="pop_jump_if_falsepop_jump_if_true">POP_JUMP_IF_FALSE / POP_JUMP_IF_TRUE</h3>
+<div class="level3">
+<pre class="code">POP_JUMP_IF_FALSE 0</pre>
+
+<p>
+<code>POP_JUMP_IF_FALSE</code> verifică TOS, iar dacă e fals, va sări la bytecode-ul dat ca argument, echivalent pentru <code>POP_JUMP_IF_TRUE</code>
+</p>
+
+</div>
+
+<h2 class="sectionedit18" id="exemplu-3">Exemplu #3</h2>
+<div class="level2">
+<pre class="code python"><span class="sy0">&gt;&gt;&gt;</span> <span class="kw1">def</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>:
+...     <span class="me1">a</span> <span class="sy0">=</span> <span class="nu0">2</span>
+...     <span class="kw1">while</span> a <span class="sy0">&gt;</span> <span class="nu0">42</span>:
+...             <span class="me1">a</span> <span class="sy0">=</span> a + <span class="nu0">1</span>
+... 
+<span class="sy0">&gt;&gt;&gt;</span> <span class="kw3">dis</span>.<span class="kw3">dis</span><span class="br0">&#40;</span>main<span class="br0">&#41;</span>
+  <span class="nu0">2</span>           <span class="nu0">0</span> LOAD_CONST               <span class="nu0">1</span> <span class="br0">&#40;</span><span class="nu0">2</span><span class="br0">&#41;</span>
+              <span class="nu0">2</span> STORE_FAST               <span class="nu0">0</span> <span class="br0">&#40;</span>a<span class="br0">&#41;</span>
+&nbsp;
+  <span class="nu0">3</span>           <span class="nu0">4</span> SETUP_LOOP              <span class="nu0">20</span> <span class="br0">&#40;</span>to <span class="nu0">26</span><span class="br0">&#41;</span>
+        <span class="sy0">&gt;&gt;</span>    <span class="nu0">6</span> LOAD_FAST                <span class="nu0">0</span> <span class="br0">&#40;</span>a<span class="br0">&#41;</span> <span class="br0">&#40;</span>byte-ul <span class="nu0">6</span><span class="sy0">,</span> aici va ajunge după JUMP_ABSOLUTE <span class="nu0">6</span><span class="br0">&#41;</span>
+              <span class="nu0">8</span> LOAD_CONST               <span class="nu0">2</span> <span class="br0">&#40;</span><span class="nu0">42</span><span class="br0">&#41;</span>
+             <span class="nu0">10</span> COMPARE_OP               <span class="nu0">4</span> <span class="br0">&#40;</span><span class="sy0">&gt;</span><span class="br0">&#41;</span>
+             <span class="nu0">12</span> POP_JUMP_IF_FALSE       <span class="nu0">24</span>
+&nbsp;
+  <span class="nu0">4</span>          <span class="nu0">14</span> LOAD_FAST                <span class="nu0">0</span> <span class="br0">&#40;</span>a<span class="br0">&#41;</span>
+             <span class="nu0">16</span> LOAD_CONST               <span class="nu0">3</span> <span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span>
+             <span class="nu0">18</span> BINARY_ADD
+             <span class="nu0">20</span> STORE_FAST               <span class="nu0">0</span> <span class="br0">&#40;</span>a<span class="br0">&#41;</span>
+             <span class="nu0">22</span> JUMP_ABSOLUTE            <span class="nu0">6</span>
+        <span class="sy0">&gt;&gt;</span>   <span class="nu0">24</span> POP_BLOCK
+        <span class="sy0">&gt;&gt;</span>   <span class="nu0">26</span> LOAD_CONST               <span class="nu0">0</span> <span class="br0">&#40;</span><span class="kw2">None</span><span class="br0">&#41;</span>
+             <span class="nu0">28</span> RETURN_VALUE
+<span class="sy0">&gt;&gt;&gt;</span> </pre>
+
+<p>
+După cum am menționat, <code>SETUP_LOOP</code> și <code>POP_BLOCK</code> pot fi ignorate. Folosindu-se de <code>COMPARE_OP</code>, urmatoarea bucată verifică condiția pentru while (a &gt; 42) : 
+</p>
+<pre class="code">LOAD_FAST 0 
+LOAD_CONST 2 
+COMPARE_OP 4 
+POP_JUMP_IF_FALSE 24</pre>
+
+<p>
+Urmatoarele instrucţiuni sunt pentru blocul while-ului: <code>a = a + 1</code>
+</p>
+<pre class="code">LOAD_FAST 0 
+LOAD_CONST 3 
+BINARY_ADD
+STORE_FAST 0</pre>
+
+</div>
+
+<h3 class="sectionedit19" id="jump_absolute">JUMP_ABSOLUTE</h3>
+<div class="level3">
+
+<p>
+JUMP_ABSOLUTE va face jump la byte-ul aflat la indexul dat ca parametru. În cazul nostru, lista de bytes este: 
+</p>
+<pre class="code python"><span class="sy0">&gt;&gt;&gt;</span> <span class="kw2">list</span><span class="br0">&#40;</span>main.__code__.<span class="me1">co_code</span><span class="br0">&#41;</span>
+<span class="br0">&#91;</span><span class="nu0">100</span><span class="sy0">,</span> <span class="nu0">1</span><span class="sy0">,</span> <span class="nu0">125</span><span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">120</span><span class="sy0">,</span> <span class="nu0">16</span><span class="sy0">,</span> <span class="nu0">124</span><span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">100</span><span class="sy0">,</span> <span class="nu0">2</span><span class="sy0">,</span> <span class="nu0">107</span><span class="sy0">,</span> <span class="nu0">4</span><span class="sy0">,</span> <span class="nu0">114</span><span class="sy0">,</span> <span class="nu0">20</span><span class="sy0">,</span> <span class="nu0">100</span><span class="sy0">,</span> <span class="nu0">1</span><span class="sy0">,</span> <span class="nu0">125</span><span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">113</span><span class="sy0">,</span> <span class="nu0">6</span><span class="sy0">,</span> <span class="nu0">87</span><span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">100</span><span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">83</span><span class="sy0">,</span> <span class="nu0">0</span><span class="br0">&#93;</span></pre>
+
+<p>
+În cazul nostru, parametrul este <code>6</code>, deci va sări la byte-ul: 
+</p>
+<pre class="code python"><span class="sy0">&gt;&gt;&gt;</span> <span class="kw2">list</span><span class="br0">&#40;</span>main.__code__.<span class="me1">co_code</span><span class="br0">&#41;</span><span class="br0">&#91;</span><span class="nu0">6</span><span class="br0">&#93;</span>
+<span class="nu0">124</span> <span class="br0">&#40;</span>LOAD_FAST<span class="br0">&#41;</span></pre>
+
+<p>
+Atenție: Al 6-lea byte din listă este reprezentat de a treia instrucțiune, deoarece fiecare instrucțiune are 2 bytes. (opcode și parametru) 
+</p>
+
+</div>
+
+<h2 class="sectionedit20" id="exemplu-4">Exemplu #4</h2>
+<div class="level2">
+<pre class="code python"><span class="sy0">&gt;&gt;&gt;</span> <span class="kw1">def</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>:
+...     <span class="me1">a</span> <span class="sy0">=</span> <span class="nu0">0</span>
+...     <span class="kw1">for</span> b <span class="kw1">in</span> <span class="br0">&#91;</span><span class="nu0">1</span><span class="sy0">,</span><span class="nu0">2</span><span class="br0">&#93;</span>:
+...             <span class="me1">a</span> <span class="sy0">=</span> a + b
+... 
+<span class="sy0">&gt;&gt;&gt;</span> <span class="kw1">import</span> <span class="kw3">dis</span>
+<span class="sy0">&gt;&gt;&gt;</span> <span class="kw3">dis</span>.<span class="kw3">dis</span><span class="br0">&#40;</span>main<span class="br0">&#41;</span>
+  <span class="nu0">2</span>           <span class="nu0">0</span> LOAD_CONST               <span class="nu0">1</span> <span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span>
+              <span class="nu0">2</span> STORE_FAST               <span class="nu0">0</span> <span class="br0">&#40;</span>a<span class="br0">&#41;</span>
+&nbsp;
+  <span class="nu0">3</span>           <span class="nu0">4</span> SETUP_LOOP              <span class="nu0">20</span> <span class="br0">&#40;</span>to <span class="nu0">26</span><span class="br0">&#41;</span>
+              <span class="nu0">6</span> LOAD_CONST               <span class="nu0">4</span> <span class="br0">&#40;</span><span class="br0">&#40;</span><span class="nu0">1</span><span class="sy0">,</span> <span class="nu0">2</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+              <span class="nu0">8</span> GET_ITER
+        <span class="sy0">&gt;&gt;</span>   <span class="nu0">10</span> FOR_ITER                <span class="nu0">12</span> <span class="br0">&#40;</span>to <span class="nu0">24</span><span class="br0">&#41;</span> <span class="br0">&#40;</span>JUMP_ABSOLUTE va sări aici<span class="br0">&#41;</span>
+             <span class="nu0">12</span> STORE_FAST               <span class="nu0">1</span> <span class="br0">&#40;</span>b<span class="br0">&#41;</span>
+&nbsp;
+  <span class="nu0">4</span>          <span class="nu0">14</span> LOAD_FAST                <span class="nu0">0</span> <span class="br0">&#40;</span>a<span class="br0">&#41;</span>
+             <span class="nu0">16</span> LOAD_FAST                <span class="nu0">1</span> <span class="br0">&#40;</span>b<span class="br0">&#41;</span>
+             <span class="nu0">18</span> BINARY_ADD
+             <span class="nu0">20</span> STORE_FAST               <span class="nu0">0</span> <span class="br0">&#40;</span>a<span class="br0">&#41;</span>
+             <span class="nu0">22</span> JUMP_ABSOLUTE           <span class="nu0">10</span>
+        <span class="sy0">&gt;&gt;</span>   <span class="nu0">24</span> POP_BLOCK
+        <span class="sy0">&gt;&gt;</span>   <span class="nu0">26</span> LOAD_CONST               <span class="nu0">0</span> <span class="br0">&#40;</span><span class="kw2">None</span><span class="br0">&#41;</span>
+             <span class="nu0">28</span> RETURN_VALUE</pre>
+
+</div>
+
+<h3 class="sectionedit21" id="get_iterfor_iter">GET_ITER / FOR_ITER</h3>
+<div class="level3">
+
+<p>
+În secvența urmatoare puteți ignora <code>SETUP_LOOP</code>: 
+</p>
+<pre class="code">LOAD_CONST 1
+STORE_FAST 0
+SETUP_LOOP 20
+LOAD_CONST 4
+GET_ITER
+FOR_ITER 12
+STORE_FAST 1
+LOAD_FAST 0
+LOAD_CONST 3
+BINARY_ADD 0
+STORE_FAST 0
+JUMP_ABSOLUT 10
+POP_BLOCK 0
+LOAD_CONST 0
+RETURN_VALUE 0</pre>
+
+<p>
+LOAD_CONST 4 va pune pe stivă <code>co-consts[4]</code>, adică lista [1, 2]:
+</p>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<td class="col0"> [1, 2] </td><td class="col1"> </td>
+	</tr>
+</table></div>
+
+<p>
+GET_ITER va fi de asemenea ignorat.
+</p>
+
+<p>
+FOR_ITER va verifica dacă se poate face <code>next</code> pe iterator, iar în acest caz se va face push pe stiva la noul iterator (fără primul element) și la primul element (top-ul stivei este reprezentat de element).
+</p>
+
+<p>
+După execuția primul FOR_ITER, stiva va arăta:
+</p>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<td class="col0"> 1 </td><td class="col1">[2]</td><td class="col2"> </td>
+	</tr>
+</table></div>
+
+<p>
+
+După a doua iterație, stiva va arăta:
+</p>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<td class="col0"> 2 </td><td class="col1"> [] </td>
+	</tr>
+</table></div>
+
+<p>
+
+La a treia iterație, iteratorul este gol și se va sări la instrucțiunea POP_BLOCK (care este ignorată). 
+</p>
+
+</div>
+
+<h2 class="sectionedit22" id="exemplu-5-pentru-bonus">Exemplu #5 (pentru bonus)</h2>
+<div class="level2">
+<pre class="code python"><span class="sy0">&gt;&gt;&gt;</span> <span class="kw1">def</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>:
+...     <span class="kw1">print</span><span class="br0">&#40;</span><span class="st0">&quot;Hello world&quot;</span><span class="br0">&#41;</span>
+... 
+<span class="sy0">&gt;&gt;&gt;</span> <span class="kw3">dis</span>.<span class="kw3">dis</span><span class="br0">&#40;</span>main<span class="br0">&#41;</span>
+  <span class="nu0">2</span>           <span class="nu0">0</span> LOAD_GLOBAL              <span class="nu0">0</span> <span class="br0">&#40;</span><span class="kw1">print</span><span class="br0">&#41;</span>
+              <span class="nu0">2</span> LOAD_CONST               <span class="nu0">1</span> <span class="br0">&#40;</span><span class="st0">'Hello world'</span><span class="br0">&#41;</span>
+              <span class="nu0">4</span> CALL_FUNCTION            <span class="nu0">1</span>
+              <span class="nu0">6</span> POP_TOP
+              <span class="nu0">8</span> LOAD_CONST               <span class="nu0">0</span> <span class="br0">&#40;</span><span class="kw2">None</span><span class="br0">&#41;</span>
+             <span class="nu0">10</span> RETURN_VALUE</pre>
+
+</div>
+
+<h3 class="sectionedit23" id="load_global">LOAD_GLOBAL</h3>
+<div class="level3">
+
+<p>
+<code>LOAD_GLOBAL 0</code> va pune pe stivă funcția de la <code>co-names[0]</code>
+</p>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<td class="col0">print</td><td class="col1"> </td><td class="col2"> </td>
+	</tr>
+</table></div>
+
+<p>
+<code>LOAD_CONST 0</code> va pune pe stivă valoarea de la <code>co-consts[0]</code>
+</p>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<td class="col0">„Hello world“</td><td class="col1">print</td><td class="col2"> </td>
+	</tr>
+</table></div>
+
+
+
+</div>
+
+<h3 class="sectionedit24" id="call_function">CALL_FUNCTION</h3>
+<div class="level3">
+
+<p>
+&#039;CALL_FUNCTION n&#039; va scoate de pe stivă primele n valori, în cazul nostru (n = 1), string-ul „Hello world“. După aceea, va scoate funcția print, va apela print(„Hello world“) și va pune rezultatul (void) pe stivă:
+</p>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<td class="col0">void</td><td class="col1"> </td><td class="col2"> </td><td class="col3"> </td>
+	</tr>
+</table></div>
+
+
+
+</div>
+
+<h3 class="sectionedit25" id="pop_top">POP_TOP</h3>
+<div class="level3">
+
+<p>
+POP_TOP va aplica operația pop pe stivă și stiva va deveni goală:
+</p>
+<div class="table"><table class="inline">
+	<tr class="row0">
+		<td class="col0"> </td><td class="col1"> </td><td class="col2"> </td><td class="col3"> </td>
+	</tr>
+</table></div>
+
+<p>
+Observați că dacă rezultatul funcției este void/nefolosit deloc, se va genera automat un <code>POP_TOP</code>.
+</p>
+
+</div>
+
+<h2 class="sectionedit26" id="detalii-de-implementare-in-racket">Detalii de implementare în Racket</h2>
+<div class="level2">
+
+</div>
+
+<h3 class="sectionedit27" id="dictionare">Dicționare</h3>
+<div class="level3">
+
+<p>
+În Racket puteți implementa dicționarele cu <code>hash</code>
+</p>
+<pre class="code racket">&gt; <a href="http://docs.racket-lang.org/reference/"><span class="kw2"><span class="br0">&#40;</span>define</span></a> dict <a href="http://docs.racket-lang.org/reference/"><span class="kw1"><span class="br0">&#40;</span>hash</span></a> <span class="st0">&quot;key1&quot;</span> <span class="nu4">2</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+&gt; dict
+<span class="re3">'#hash</span><span class="br0">&#40;</span><span class="br0">&#40;</span><span class="st0">&quot;key1&quot;</span> <span class="sy0">.</span> <span class="nu4">2</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+&gt; <a href="http://docs.racket-lang.org/reference/"><span class="kw1"><span class="br0">&#40;</span>hash-ref</span></a> dict <span class="st0">&quot;key1&quot;</span><span class="br0">&#41;</span><span class="co1">; hash lookup</span>
+<span class="nu4">2</span>
+&gt; <a href="http://docs.racket-lang.org/reference/"><span class="kw1"><span class="br0">&#40;</span>hash-set</span></a> dict <span class="st0">&quot;key1&quot;</span> <span class="nu4">42</span><span class="br0">&#41;</span><span class="co1">; hash update</span>
+<span class="re3">'#hash</span><span class="br0">&#40;</span><span class="br0">&#40;</span><span class="st0">&quot;key1&quot;</span> <span class="sy0">.</span> <span class="nu4">42</span><span class="br0">&#41;</span><span class="br0">&#41;</span></pre>
+
+<p>
+Mai multe detalii in <a href="https://docs.racket-lang.org/reference/hashtables.html" class="urlextern" title="https://docs.racket-lang.org/reference/hashtables.html" rel="nofollow">documentația de racket</a>
+</p>
+
+</div>
+
+<h3 class="sectionedit28" id="iteratori">Iteratori</h3>
+<div class="level3">
+
+<p>
+O variantă de a implementa iteratori este folosind liste: elementul curent este primul element din list şi next este restul listei. 
+</p>
+<pre class="code racket"><a href="http://docs.racket-lang.org/reference/"><span class="kw2"><span class="br0">&#40;</span>define</span></a> current<a href="http://docs.racket-lang.org/reference/"><span class="kw1"> car</span></a><span class="br0">&#41;</span>
+<a href="http://docs.racket-lang.org/reference/"><span class="kw2"><span class="br0">&#40;</span>define</span></a> next<a href="http://docs.racket-lang.org/reference/"><span class="kw1"> cdr</span></a><span class="br0">&#41;</span>
+&nbsp;
+<span class="br0">&#40;</span>current <span class="br0">&#40;</span>next <span class="br0">&#40;</span>next <span class="br0">&#40;</span>next <span class="sy0">'</span><span class="br0">&#40;</span><span class="nu4">1</span> <span class="nu4">2</span> <span class="nu4">3</span> <span class="nu4">4</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+<span class="nu4">4</span></pre>
+
+<p>
+Dacă alegeți să implementați așa, puteți ignora instrucțiunea &#039;GET_ITER&#039;, care face <code>TOS = iter(TOS)</code>, deoarce orice listă este un iterator. 
+</p>
+
+</div>
+
+<h3 class="sectionedit29" id="jump-la-target">Jump la target</h3>
+<div class="level3">
+
+<p>
+Python generează o lista de byte-codes: 
+</p>
+<pre class="code python"><span class="sy0">&gt;&gt;&gt;</span> <span class="kw2">list</span><span class="br0">&#40;</span>main.__code__.<span class="me1">co_code</span><span class="br0">&#41;</span>
+<span class="br0">&#91;</span><span class="nu0">100</span> <span class="nu0">1</span> <span class="nu0">125</span> <span class="nu0">0</span> <span class="nu0">100</span> <span class="nu0">2</span> <span class="nu0">125</span> <span class="nu0">1</span> <span class="nu0">124</span> <span class="nu0">0</span> <span class="nu0">100</span> <span class="nu0">3</span> <span class="nu0">107</span> <span class="nu0">5</span> <span class="nu0">114</span> <span class="nu0">24</span> <span class="nu0">100</span> <span class="nu0">3</span> <span class="nu0">125</span> <span class="nu0">1</span> <span class="nu0">100</span> <span class="nu0">4</span> <span class="nu0">125</span> <span class="nu0">0</span> <span class="nu0">100</span> <span class="nu0">0</span> <span class="nu0">83</span> <span class="nu0">0</span><span class="br0">&#93;</span></pre>
+
+<p>
+Aceasta este parsată în scheletul de cod și devine: 
+</p>
+<pre class="code racket">&gt; <span class="br0">&#40;</span>co<span class="sy0">-</span>code <a href="http://docs.racket-lang.org/reference/"><span class="kw1"><span class="br0">&#40;</span>cadddr</span></a> arguments<span class="br0">&#41;</span><span class="br0">&#41;</span>
+<span class="sy0">'</span><span class="br0">&#40;</span><span class="br0">&#40;</span>LOAD<span class="sy0">_</span>CONST <span class="sy0">.</span> <span class="nu4">1</span><span class="br0">&#41;</span>
+  <span class="br0">&#40;</span>STORE<span class="sy0">_</span>FAST <span class="sy0">.</span> <span class="nu4">0</span><span class="br0">&#41;</span>
+  <span class="br0">&#40;</span>LOAD<span class="sy0">_</span>CONST <span class="sy0">.</span> <span class="nu4">2</span><span class="br0">&#41;</span>
+  <span class="br0">&#40;</span>STORE<span class="sy0">_</span>FAST <span class="sy0">.</span> <span class="nu4">1</span><span class="br0">&#41;</span>
+  <span class="br0">&#40;</span>LOAD<span class="sy0">_</span>FAST <span class="sy0">.</span> <span class="nu4">0</span><span class="br0">&#41;</span>
+  <span class="br0">&#40;</span>LOAD<span class="sy0">_</span>CONST <span class="sy0">.</span> <span class="nu4">3</span><span class="br0">&#41;</span>
+  <span class="br0">&#40;</span>COMPARE<span class="sy0">_</span>OP <span class="sy0">.</span> <span class="nu4">5</span><span class="br0">&#41;</span>
+  <span class="br0">&#40;</span>POP<span class="sy0">_</span>JUMP<span class="sy0">_</span>IF<span class="sy0">_</span>FALSE <span class="sy0">.</span> <span class="nu4">24</span><span class="br0">&#41;</span>
+  <span class="br0">&#40;</span>LOAD<span class="sy0">_</span>CONST <span class="sy0">.</span> <span class="nu4">3</span><span class="br0">&#41;</span>
+  <span class="br0">&#40;</span>STORE<span class="sy0">_</span>FAST <span class="sy0">.</span> <span class="nu4">1</span><span class="br0">&#41;</span>
+  <span class="br0">&#40;</span>LOAD<span class="sy0">_</span>CONST <span class="sy0">.</span> <span class="nu4">4</span><span class="br0">&#41;</span>
+  <span class="br0">&#40;</span>STORE<span class="sy0">_</span>FAST <span class="sy0">.</span> <span class="nu4">0</span><span class="br0">&#41;</span>
+  <span class="br0">&#40;</span>LOAD<span class="sy0">_</span>CONST <span class="sy0">.</span> <span class="nu4">0</span><span class="br0">&#41;</span>
+  <span class="br0">&#40;</span>RETURN<span class="sy0">_</span>VALUE <span class="sy0">.</span> <span class="nu4">0</span><span class="br0">&#41;</span><span class="br0">&#41;</span></pre>
+
+<p>
+Astfel, byte-ul de la indexul <code>n</code> apare în lista noastră pe poziția <code>n/2</code>
+</p>
+
+</div>
+
+<h2 class="sectionedit30" id="punctaje">Punctaje</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> [20p] - Checker intern în Racket pentru reprezentarea entităților (stack, stack-machine)</div>
+</li>
+<li class="level0"><div class="li"> [20p] - Teste cu load-store <strong>exceptând LOAD_GLOBAL</strong></div>
+</li>
+<li class="level0"><div class="li"> [20p] - Teste cu operații binare: +, -, %  </div>
+</li>
+<li class="level0"><div class="li"> [20p] - Teste cu structuri if</div>
+</li>
+<li class="level0"><div class="li"> [20p] - Teste cu structuri while şi for</div>
+</li>
+</ul>
+
+<p>
+Bonus:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>[5p] - Teste CALL_FUNCTION cu funcția print</strong></div>
+</li>
+<li class="level0"><div class="li"> <strong>[5p] - Teste CALL_FUNCTION cu funcția range</strong></div>
+</li>
+<li class="level0"><div class="li"> <strong>[5p] - Teste CALL_FUNCTION cu funcția sqrt</strong></div>
+</li>
+<li class="level0"><div class="li"> <strong>[5p] - Teste CALL_FUNCTION cu funcția prod</strong></div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit31" id="generare-cod">Generare cod</h2>
+<div class="level2">
+
+<p>
+Testele vor fi pregenerate. Dacă doriți să rulați propriul fișier Python, o puteți face folosind comanda <code>./run</code>
+</p>
+<pre class="code bash">.<span class="sy0">/</span>run fisier.py</pre>
+
+<p>
+Dacă doriți să generați din nou bytecode-ul unui fişier, puteți şterge fişier-ul <code>.pyppc</code> care are numele identic cu fișierul de Python sau puteţi rula testul cu flagul <code>–clear-cache</code>. 
+</p>
+<pre class="code bash">.<span class="sy0">/</span>run fisier.py <span class="re5">--clear-cache</span></pre>
+
+<p>
+<strong>Atenție! Bytecode-ul prezentat este cel generat de Python 3.6.7, pentru alte versiuni s-ar putea să difere.</strong>
+</p>
+
+</div>
+
+<h2 class="sectionedit32" id="rulare">Rulare</h2>
+<div class="level2">
+
+<p>
+Puteți rula codul vostru folosindu-vă de fisierul .pyppc (generat de <code>./run</code>): 
+</p>
+<pre class="code">$ racket byterun.rkt tests/smaller/if_smaller_true_prog.pyppc</pre>
+
+<p>
+Atenție scheletul a fost dezvoltat pentru Linux, s-ar putea sa aveți probleme la rularea pe Windows.
+</p>
+
+</div>
+
+<h2 class="sectionedit33" id="precizari">Precizări</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <strong>Sunt interzise efectele laterale de orice fel</strong> (<code>set!</code>, <code>set-car!</code> etc.).</div>
+</li>
+<li class="level1"><div class="li"> Arhiva pe care va trebui să o încărcați pe vmchecker trebuie să conțină fișierele <code>opcodes.rkt</code> și <code>opcodes.rkt</code>.</div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit34" id="arhive-de-pornire">Arhive de pornire</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="/pp/_media/19/teme/pypp_start.zip" class="media mediafile mf_zip" title="19:teme:pypp_start.zip (59.6 KB)"> Arhivă de pornire </a></div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit35" id="changelog">Changelog</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> 23.03.2019 - Arhiva de pornire nouă.</div>
+</li>
+<li class="level0"><div class="li"> 22.03.2019 - Modificare arhivă de pornire.</div>
+</li>
+<li class="level0"><div class="li"> 21.03.2019 - Specificat POP_JUMP_IF_* elimină elementul din vârful stivei și clarificare FOR_ITER</div>
+</li>
+<li class="level0"><div class="li"> 21.03.2019 - Adăugare a noi arhive de pornire.</div>
+</li>
+<li class="level0"><div class="li"> 21.03.2019 - clarificare STORE_FAST și COMPARE_OP</div>
+</li>
+<li class="level0"><div class="li"> 20.03.2019 - clarificări (exemplu) BINARY_ADD</div>
+</li>
+<li class="level0"><div class="li"> 20.03.2019 - clarificări FOR_ITER</div>
+</li>
+<li class="level0"><div class="li"> 19.03.2019 - adaugat „delta“ la FOR_ITER</div>
+</li>
+<li class="level0"><div class="li"> 19.03.2019 - înlocuit funcția <em>pow</em> cu <em>prod</em></div>
+</li>
+<li class="level0"><div class="li"> 19.03.2019 - adăugat secțiune de <em>Precizări</em></div>
+</li>
+</ul>
+
+</div>
+
+                    <!-- wikipage stop -->
+                                    </div>
+
+                <div class="docInfo"><bdi>19/teme/racket-pypp.txt</bdi> · Ultima modificare: 2019/03/22 23:05 de către <bdi>George Muraru</bdi></div>
+
+                            </div></div><!-- /content -->
+
+            <hr class="a11y" />
+
+            <!-- PAGE ACTIONS -->
+            <div id="dokuwiki__pagetools">
+                <h3 class="a11y">Unelte pagină</h3>
+                <div class="tools">
+                    <ul>
+                        <li class="source"><a href="/pp/19/teme/racket-pypp?do=edit" title="Arată sursa paginii [v]" rel="nofollow" accesskey="v"><span>Arată sursa paginii</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5l3.74 3.74 1.42-1.41-2.33-2.33 2.33-2.33-1.42-1.41-3.74 3.74m11.16 0l-3.74-3.74-1.42 1.41 2.33 2.33-2.33 2.33 1.42 1.41 3.74-3.74z"/></svg></a></li><li class="revs"><a href="/pp/19/teme/racket-pypp?do=revisions" title="Versiuni anterioare [o]" rel="nofollow" accesskey="o"><span>Versiuni anterioare</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11 7v5.11l4.71 2.79.79-1.28-4-2.37V7m0-5C8.97 2 5.91 3.92 4.27 6.77L2 4.5V11h6.5L5.75 8.25C6.96 5.73 9.5 4 12.5 4a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5c-3.27 0-6.03-2.09-7.06-5h-2.1c1.1 4.03 4.77 7 9.16 7 5.24 0 9.5-4.25 9.5-9.5A9.5 9.5 0 0 0 12.5 2z"/></svg></a></li><li class="backlink"><a href="/pp/19/teme/racket-pypp?do=backlink" title="Legătură anterioară" rel="nofollow"><span>Legătură anterioară</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24 2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24 2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24.973.973 0 0 1 0-1.42z"/></svg></a></li><li class="top"><a href="#dokuwiki__top" title="La început [t]" rel="nofollow" accesskey="t"><span>La început</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg></a></li>                    </ul>
+                </div>
+            </div>
+        </div><!-- /wrapper -->
+
+        
+<!-- ********** FOOTER ********** -->
+<div id="dokuwiki__footer"><div class="pad">
+    
+    <div class="buttons">
+                <a href="https://www.dokuwiki.org/donate" title="Donate" ><img
+            src="/pp/lib/tpl/dokuwiki/images/button-donate.gif" width="80" height="15" alt="Donate" /></a>
+        <a href="https://php.net" title="Powered by PHP" ><img
+            src="/pp/lib/tpl/dokuwiki/images/button-php.gif" width="80" height="15" alt="Powered by PHP" /></a>
+        <a href="//validator.w3.org/check/referer" title="Valid HTML5" ><img
+            src="/pp/lib/tpl/dokuwiki/images/button-html5.png" width="80" height="15" alt="Valid HTML5" /></a>
+        <a href="//jigsaw.w3.org/css-validator/check/referer?profile=css3" title="Valid CSS" ><img
+            src="/pp/lib/tpl/dokuwiki/images/button-css.png" width="80" height="15" alt="Valid CSS" /></a>
+        <a href="https://dokuwiki.org/" title="Driven by DokuWiki" ><img
+            src="/pp/lib/tpl/dokuwiki/images/button-dw.png" width="80" height="15" alt="Driven by DokuWiki" /></a>
+    </div>
+</div></div><!-- /footer -->
+
+    </div></div><!-- /site -->
+
+    <div class="no"><img src="/pp/lib/exe/indexer.php?id=19%3Ateme%3Aracket-pypp&amp;1553468317" width="2" height="1" alt="" /></div>
+    <div id="screen__mode" class="no"></div></body>
+</html>
